@@ -7,9 +7,9 @@
   >
 
   <div *ngIf="indicators" class="carousel-ind-container">
-    <span *ngFor="let ind of images; let i=index" class="indicator"
+    <span role="button" *ngFor="let ind of images; let i=index" [tabindex]="i" class="indicator"
       [ngClass]="{'indicator-active': selectedIndex === i}"
-      (click)="selectImage(i)">
+      (click)="selectImage(i)" (keypress)="selectImage(i)">
 
     </span>
   </div>
